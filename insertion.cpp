@@ -9,20 +9,27 @@ int main(){
     int size,pos,i,num,n;
     cout << "Enter the size of the array: ";
     cin >> size;
+    cout << "Enter the elements in the array: "<< endl;
     for(i=0;i<size;i++){
         cin >> a[i];
     }
-    cout << "Enter the psotion: ";
+    cout << "\n" << "Enter the psotion: ";
     cin >> pos;
-    cout << "Enter the number: ";
+    cout << "\n" << "Enter the number: ";
     cin >> num;
-    for(i=size-1;i>=pos-1;i--){
-        a[i+1]=a[i];
+    if(pos<=0 || pos>size+1){                          //Bound on Position Condition
+        cout << "Invalid Position";
     }
-    a[pos-1]=num;
-    for(i=0;i<=size;i++){
-        cout << " " << a[i];
-    }
+    else{
+      for(i=size-1;i>=pos-1;i--){
+         a[i+1]=a[i];
+      }
+      a[pos-1]=num;
+      cout << "\n" << "After inserting the element: ";
+      for(i=0;i<=size;i++){
+        cout << "\n" << " "<< a[i];     //" " use for space
+      }
+    }  
     return 0;
 
 }
